@@ -1,0 +1,10 @@
+/target
+.project
+.settings/
+.classpath
+*.log
+*.log.*
+*.class
+src/main/webapp/img/
+*/db_server.properties
+*/tadpole.properties

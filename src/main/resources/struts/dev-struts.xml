@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="development" namespace="/dev" extends="struts-default">
+		
+		<result-types>
+			 <result-type name="json" class="org.apache.struts2.json.JSONResult" />
+			 <result-type name="redirect" class="org.apache.struts2.dispatcher.ServletRedirectResult"/> 
+		</result-types>
+		<action name="develop">
+			<result>dev-create-function.jsp</result>
+		</action>
+		<action name="saveOrUpdateTadFunction" class="TadFunctionAction" method="saveOrUpdateTadFunction">
+			<result name="input">
+				dev-create-function.jsp
+			</result>
+			<result name="success" type="json">
+				<param name="root">response</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+		<action name="saveOrUpdateTadAttribute" class="TadFunctionAction" method="saveOrUpdateTadAttribute">
+			<result name="input">
+				dev-create-function.jsp
+			</result>
+			<result name="success" type="json">
+				<param name="root">response</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+		<action name="removeAttribute" class="TadFunctionAction" method="removeAttribute">
+			<result name="input">
+				dev-create-function.jsp
+			</result>
+			<result name="success" type="json">
+				<param name="root">response</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+		<action name="removeSingleFunction" class="TadFunctionAction" method="removeSingleFunction">
+			<result name="input">
+				dev-create-function.jsp
+			</result>
+			<result name="success" type="json">
+				<param name="root">response</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+		
+		<action name="generateCode" class="TadFunctionAction" method="generateCode">
+			<result name="input">
+				dev-create-function.jsp
+			</result>
+			<result name="success" type="json">
+				<param name="root">response</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+		<action name="loadAllTableNames" class="TadFunctionAction" method="loadAllTableNames">
+			<result name="success" type="json">
+				<param name="root">response</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+		<action name="loadSingleFunction" class="TadFunctionAction" method="loadSingleFunction">
+			<result name="success" type="json">
+				<param name="root">response</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+		<action name="loadFunctionAttrites" class="TadFunctionAction" method="loadFunctionAttrites">
+			<result name="success" type="json">
+				<param name="root">response</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+	</package>
+	
+</struts>

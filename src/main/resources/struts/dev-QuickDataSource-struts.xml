@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="devQuickDataSource" namespace="/dev" extends="struts-default">
+		
+		<result-types>
+			 <result-type name="json" class="org.apache.struts2.json.JSONResult" />
+		</result-types>
+		<action name="loadQuickDataSourceMgr">
+			<result>dev-QuickDataSource-management.jsp</result>
+		</action>
+		<action name="saveOrUpdateQuickDataSource" class="QuickDataSourceAction" method="saveOrUpdateQuickDataSource">
+			<result name="input">
+				dev-QuickDataSource-management.jsp
+			</result>
+			<result name="success" type="json">
+				<param name="root">response</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+		<action name="deleteQuickDataSource" class="QuickDataSourceAction" method="deleteQuickDataSource">
+			<result name="input">
+				dev-QuickDataSource-management.jsp
+			</result>
+			<result name="success" type="json">
+				<param name="root">response</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+		<action name="loadQuickDataSources" class="QuickDataSourceAction" method="loadQuickDataSources">
+			<result name="success" type="json">
+				<param name="root">response</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+	</package>
+	
+</struts>

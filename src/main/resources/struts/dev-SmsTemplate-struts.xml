@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="devSmsTemplate" namespace="/dev" extends="struts-default">
+		
+		<result-types>
+			 <result-type name="json" class="org.apache.struts2.json.JSONResult" />
+		</result-types>
+		<action name="loadSmsTemplateMgr">
+			<result>dev-SmsTemplate-management.jsp</result>
+		</action>
+		<action name="saveOrUpdateSmsTemplate" class="SmsTemplateAction" method="saveOrUpdateSmsTemplate">
+			<result name="input">
+				dev-SmsTemplate-management.jsp
+			</result>
+			<result name="success" type="json">
+				<param name="root">response</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+		<action name="deleteSmsTemplate" class="SmsTemplateAction" method="deleteSmsTemplate">
+			<result name="input">
+				dev-SmsTemplate-management.jsp
+			</result>
+			<result name="success" type="json">
+				<param name="root">response</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+		<action name="loadSmsTemplates" class="SmsTemplateAction" method="loadSmsTemplates">
+			<result name="success" type="json">
+				<param name="root">response</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+	</package>
+	
+</struts>
